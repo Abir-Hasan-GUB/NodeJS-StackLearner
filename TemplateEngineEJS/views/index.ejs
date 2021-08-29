@@ -1,0 +1,29 @@
+<%- include ('../partials/header.ejs') %>
+
+    <h1>Hello, world!</h1>
+    <h2>Welcome from EJS! <%= msg %> </h2>
+    <h6 class="text-danger"><%= new Date().toString() %> </h6>
+
+    <div class="card" style="width: 300px;">
+        <h5 class="card-title text-center px-3 pt-2 <%= status ? "text-success" : "text-danger" %>"</h5> <%= status ? postTitle : "Post Not Found" %></h5>
+
+        <div class="card-body">
+            <% if(status) {%> 
+                
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eveniet officia mollitia.lorem15 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus est error fugiat minus quos similique voluptatum modi nostrum in excepturi!</p>
+            <% } else { %> 
+                <h4 class="tex-mute text-center text-danger">Post not published yet !</h4>
+                <% } %> 
+        </div>
+        <% if(status) {%> 
+        <div class="card-footer d-flex justify-content-between">
+            <h6 class="p text-info">10 min read</h6>
+            <h6 class="p text-primary"><a href="#">read more</a></h6>
+        </div>
+        <% } else {%>
+            <p class="text-center text-danger">Wait for new post ! :)</p>
+            <% } %> 
+    </div>
+      
+
+    <%- include ('../partials/footer.ejs') %>
